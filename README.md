@@ -5,9 +5,14 @@ A comprehensive data engineering solution for DeFtunes, a music streaming and di
 
 The new requirements for this project are:
 
-
-
 <img src="images/Capstone-diagram2.png" alt="Capstone_Diagram_Part2" width="1150">
+
+1. The pipeline should allow for incremental ingestion of new data from the data sources.
+2. The pipeline should run daily using data orchestration (you will use Airflow).
+3. Data quality checks should be implemented to verify the quality of newly ingested and cleansed data.
+4. Analytical views should be added on top of the star schema data model.
+5. A company dashboard would be added to the architecture to visualize analytical views and insights (this is out of scope for this course).
+
 
 1. The pipeline should allow for incremental ingestion of new data from the data sources.
 2. The pipeline should run daily using data orchestration (you will use Airflow).
