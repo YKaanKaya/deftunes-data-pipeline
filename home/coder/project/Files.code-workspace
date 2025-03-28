@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../Files (5)/Files/home/coder/project/.dotfiles-coursera"
+		},
+		{
+			"path": "../../../../Files (5)/Files/home/coder/project/dags"
+		},
+		{
+			"path": "../../../../Files (5)/Files/home/coder/project/images"
+		},
+		{
+			"path": "../../../../Files (5)/Files/home/coder/project/terraform"
+		},
+		{
+			"path": "../../../../Files (5)/Files/home/coder/project/dbt_modeling"
+		},
+		{
+			"path": "../../../../Files (5)/Files/home/coder/project/scripts"
+		}
+	],
+	"settings": {}
+}
