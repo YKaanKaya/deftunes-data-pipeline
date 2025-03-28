@@ -3,7 +3,15 @@
 ## Project Overview
 A comprehensive data engineering solution for DeFtunes, a music streaming and digital purchase platform. This project implements a robust data pipeline that extracts purchase data from APIs and operational databases, processes it through several transformation layers, and delivers insights through an analytics layer.
 
-![Architecture Diagram](images/Capstone-diagram2.png)
+The new requirements for this project are:
+
+<img src="images/Capstone-diagram2.png" alt="Capstone_Diagram_Part2" width="1150">
+
+1. The pipeline should allow for incremental ingestion of new data from the data sources.
+2. The pipeline should run daily using data orchestration (you will use Airflow).
+3. Data quality checks should be implemented to verify the quality of newly ingested and cleansed data.
+4. Analytical views should be added on top of the star schema data model.
+5. A company dashboard would be added to the architecture to visualize analytical views and insights (this is out of scope for this course).
 
 ## Features
 
