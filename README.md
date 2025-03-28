@@ -3,28 +3,30 @@
 ## Project Overview
 A comprehensive data engineering solution for DeFtunes, a music streaming and digital purchase platform. This project implements a robust data pipeline that extracts purchase data from APIs and operational databases, processes it through several transformation layers, and delivers insights through an analytics layer.
 
-The new requirements for this project are:
+This is a complete implementation that spans from initial data ingestion to analytical insights, developed in two phases:
 
-<img src="images/Capstone-diagram2.png" alt="Capstone_Diagram_Part2" width="1150">
+### Phase 1 - Foundation
+- Basic data architecture setup
+- Extract-load-transform pipeline for initial data loading
+- Star schema design in Redshift
+- Initial dbt models for data transformation
+
+### Phase 2 - Advanced Implementation
+- Incremental data ingestion
+- Automated orchestration with Airflow
+- Data quality validation
+- Enhanced analytical views
+- Dashboard integration
+
+![DeFtunes Architecture](images/Capstone-diagram2.png)
+
+## Requirements
 
 1. The pipeline should allow for incremental ingestion of new data from the data sources.
-2. The pipeline should run daily using data orchestration (you will use Airflow).
+2. The pipeline should run daily using data orchestration (using Airflow).
 3. Data quality checks should be implemented to verify the quality of newly ingested and cleansed data.
 4. Analytical views should be added on top of the star schema data model.
-5. A company dashboard would be added to the architecture to visualize analytical views and insights (this is out of scope for this course).
-
-
-1. The pipeline should allow for incremental ingestion of new data from the data sources.
-2. The pipeline should run daily using data orchestration (you will use Airflow).
-3. Data quality checks should be implemented to verify the quality of newly ingested and cleansed data.
-4. Analytical views should be added on top of the star schema data model.
-5. A company dashboard would be added to the architecture to visualize analytical views and insights (this is out of scope for this course).
-
-1. The pipeline should allow for incremental ingestion of new data from the data sources.
-2. The pipeline should run daily using data orchestration (you will use Airflow).
-3. Data quality checks should be implemented to verify the quality of newly ingested and cleansed data.
-4. Analytical views should be added on top of the star schema data model.
-5. A company dashboard would be added to the architecture to visualize analytical views and insights (this is out of scope for this course).
+5. A company dashboard would be added to the architecture to visualize analytical views and insights.
 
 ## Features
 
@@ -59,6 +61,7 @@ The data architecture implements a modern lakehouse pattern:
 2. **Extract Layer**:
    - AWS Glue jobs extract data to S3 landing zone
    - Parametrized for incremental extraction
+   - Date-based filtering for new data
 
 3. **Transform Layer**:
    - Glue ETL jobs for data cleansing
@@ -73,6 +76,28 @@ The data architecture implements a modern lakehouse pattern:
 5. **Presentation Layer**:
    - Apache Superset dashboards
    - Business intelligence views
+
+## Data Flow
+
+1. **Extraction**:
+   - Airflow triggers daily AWS Glue jobs
+   - API data is extracted in JSON format
+   - RDS data is extracted using JDBC connection
+
+2. **Transformation**:
+   - Raw data is processed with AWS Glue
+   - Metadata added during transformation
+   - Data quality checks performed
+
+3. **Loading**:
+   - Transformed data loaded into Redshift
+   - dbt creates dimensional models
+   - Analytical views generated
+
+4. **Visualization**:
+   - Apache Superset connection to Redshift
+   - Dashboards for business insights
+   - Interactive reports
 
 ## Repository Structure
 
@@ -142,6 +167,8 @@ Data quality is enforced using AWS Glue Data Quality with rule sets that validat
 The project includes analytical views for:
 - Sales per artist by year
 - Sales per country by month and year
+- User activity metrics
+- Music preference analysis
 
 ## Future Enhancements
 - Real-time data processing

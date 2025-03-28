@@ -8,3 +8,37 @@ models:
       - name: session_year
       - name: country_code
       - name: total_sales
+  
+  - name: sales_per_artist_vw
+    description: "Sales per artist per year view"
+    columns:
+      - name: session_year
+      - name: artist_name
+      - name: total_sales
+
+  - name: user_activity_vw
+    description: "User activity metrics"
+    columns:
+      - name: user_id
+      - name: user_name
+      - name: user_lastname
+      - name: country_code
+      - name: total_sessions
+      - name: active_days
+      - name: total_spent
+      - name: avg_purchase_value
+      - name: last_activity_date
+      - name: liked_songs_count
+
+  - name: music_preference_vw
+    description: "Music preference patterns analysis"
+    columns:
+      - name: artist_name
+      - name: song_name
+      - name: total_purchases
+      - name: liked_count
+      - name: like_percentage
+      - name: avg_price
+      - name: country_code
+      - name: purchase_month
+      - name: purchase_year
